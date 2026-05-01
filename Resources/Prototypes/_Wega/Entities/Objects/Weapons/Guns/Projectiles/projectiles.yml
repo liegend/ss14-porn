@@ -91,3 +91,28 @@
     radius: 1.5
     energy: 4.6
     color: "#ffffff"
+
+- type: entity
+  name: nail
+  id: BulletNail
+  parent: BulletLaser
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Weapons/Guns/Projectiles/cbbolt.rsi
+    layers:
+    - state: cbbolt
+  - type: Ammo
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+        Structural: -20
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Opaque

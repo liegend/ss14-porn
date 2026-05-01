@@ -505,3 +505,56 @@
     tags:
     - Itemborg
     - SurgeryTool
+
+- type: entity
+  name: surgery multitool
+  id: SurgeryMultitool
+  parent: BaseToolSurgery
+  description: A surgical tool used to cauterize open wounds.
+  components:
+  - type: Sharp
+    butcherDelayModifier: 1.5
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Medical/Surgery/omnimed.rsi
+    state: omnimed
+  - type: Item
+    size: Normal
+    sprite: _Wega/Objects/Specific/Medical/Surgery/omnimed.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 8
+    soundHit:
+      path: /Audio/Effects/lightburn.ogg
+  - type: SurgicalTool
+    modifier: 9
+  - type: Tool
+    speedModifier: 3
+    qualities:
+      - Cautery
+      - Drilling
+      - Slicing
+      - Scalpel
+      - Retractor
+      - Hemostat
+      - Sawing
+      - BoneGel
+      - BoneSetter
+
+- type: entity
+  name: surgery multitool
+  id: SurgeryMultitoolEerie
+  parent: SurgeryMultitool
+  description: A surgical tool used to cauterize open wounds.
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Medical/Surgery/omnimed.rsi
+    state: evil
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: evil-inhand-left
+      right:
+      - state: evil-inhand-right
+    size: Normal
+    sprite: _Wega/Objects/Specific/Medical/Surgery/omnimed.rsi

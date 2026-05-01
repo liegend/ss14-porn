@@ -352,3 +352,46 @@
     autoRechargeRate: 35
   - type: Item
     size: Large
+
+- type: entity
+  name: nail gun
+  parent: BaseWeaponBattery
+  id: WeaponEnergyNailGun
+  description: A high powered self-charging energy pistol designed for elite security personnel. It has has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Gun
+    minAngle: 0
+    maxAngle: 0
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+  - type: Sprite
+    sprite: _Wega/Objects/Weapons/Guns/Battery/nail_gun.rsi
+    layers:
+    - state: base
+  - type: Appearance
+  - type: Clothing
+    sprite: _Wega/Objects/Weapons/Guns/Battery/nail_gun.rsi
+    slots:
+    - Belt
+    - suitStorage
+  - type: BatteryAmmoProvider
+    proto: BulletNail
+    fireCost: 5
+  - type: Battery
+    maxCharge: 300
+    startingCharge: 300
+  - type: BatterySelfRecharger
+    autoRechargeRate: 48
+    autoRechargePauseTime: 10
+  - type: Tag
+    tags:
+    - Sidearm
